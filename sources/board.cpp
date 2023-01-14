@@ -9,7 +9,7 @@ board::board()
   tile * t = new tile{&widget};
   tilesLayout.addWidget(t);
   tiles.push_back(t);
-  connect(t, &QPushButton::clicked, this, [this, i](const bool b){emit tileClicked(i+1);});
+  connect(t, &tile::getId, this, &board::tileClicked);
  }
  // dices
  layout.addWidget(&d);
