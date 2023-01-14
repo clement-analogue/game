@@ -3,6 +3,7 @@ tile::tile(T... args)
  : QPushButton(args...)
 {
  ++tileNumber;
- this->setText(QString::number(tileNumber));
- //connect(this, &QPushButton::pressed, this, [this]{setFlat(true);});
+ id = tileNumber;
+ this->setText(QString::number(id));
+ connect(this, &QPushButton::clicked, this, [this](const bool){emit getId(id);});
 }
