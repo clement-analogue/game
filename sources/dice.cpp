@@ -6,10 +6,8 @@ dice::dice()
 {
  label.setText("Dice " + QString::number(diceNumber));
  ++diceNumber;
- QObject::connect(&button, &QPushButton::clicked, this, &dice::setLabel);
  layout.addWidget(&label);
  layout.addWidget(&result);
- layout.addWidget(&button);
 }
 
 QString dice::generateRandomNumber()

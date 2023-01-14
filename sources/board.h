@@ -1,7 +1,7 @@
 #pragma once
 
 // local
-#include "dice.h"
+#include "dices.h"
 #include "tile.h"
 
 // qt
@@ -17,9 +17,7 @@ class board final
  QWidget widget{};
  QVBoxLayout layout{&widget};
  QHBoxLayout tilesLayout{};
- QHBoxLayout dicesLayout{};
- dice d0{};
- dice d1{};
+ dices d{};
  public:
  explicit board();
 };

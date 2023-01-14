@@ -9,8 +9,6 @@ board::board()
   tile * t = new tile{&widget};
   tilesLayout.addWidget(t);
  }
- layout.addLayout(&dicesLayout);
- dicesLayout.addWidget(&d0);
- dicesLayout.addWidget(&d1);
+ layout.addWidget(&d);
  widget.show();
 }
