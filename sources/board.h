@@ -5,6 +5,7 @@
 #include "tile.h"
 
 // qt
+#include <QObject>
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -12,8 +13,10 @@
 // std
 #include <vector>
 
-class board final
+class board final : public QObject
 {
+ Q_OBJECT
+ Q_DISABLE_COPY(board)
  QWidget widget{};
  QVBoxLayout layout{&widget};
  QHBoxLayout tilesLayout{};
@@ -21,4 +24,6 @@ class board final
  public:
  explicit board();
  void allowLaunchDices();
+ signals:
+ void result(const int result) const;
 };

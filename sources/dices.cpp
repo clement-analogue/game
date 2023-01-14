@@ -10,12 +10,18 @@ dices::dices()
 
 void dices::allowLaunch()
 {
- QObject::connect(&button, &QPushButton::clicked, &d0, &dice::setLabel);
- QObject::connect(&button, &QPushButton::clicked, &d1, &dice::setLabel);
- QObject::connect(&button, &QPushButton::clicked, this, &dices::disallowLaunch);
+ connect(&button, &QPushButton::clicked, &d0, &dice::setLabel);
+ connect(&button, &QPushButton::clicked, &d1, &dice::setLabel);
+ connect(&button, &QPushButton::clicked, this, &dices::gatherResults);
+ connect(&button, &QPushButton::clicked, this, &dices::disallowLaunch);
 }
 
 void dices::disallowLaunch()
 {
- QObject::disconnect(&button, 0, 0, 0);
+ disconnect(&button, 0, 0, 0);
+}
+
+void dices::gatherResults() const
+{
+ emit result(d0.getResult() + d1.getResult());
 }

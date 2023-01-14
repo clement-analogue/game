@@ -4,4 +4,5 @@ tile::tile(T... args)
 {
  ++tileNumber;
  this->setText(QString::number(tileNumber));
+ connect(this, &QPushButton::pressed, this, [this]{setFlat(true);});
 }

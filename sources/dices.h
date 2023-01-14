@@ -9,13 +9,18 @@
 
 class dices final : public QWidget
 {
+ Q_OBJECT
+ Q_DISABLE_COPY(dices)
  dice d0{};
  dice d1{};
  QVBoxLayout layout{this};
  QHBoxLayout dicesLayout{};
  QPushButton button{"Launch"};
  void disallowLaunch();
+ void gatherResults() const;
  public:
  void allowLaunch();
  explicit dices();
+ signals:
+ void result(const int result) const;
 };

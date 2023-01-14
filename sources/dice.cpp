@@ -7,15 +7,21 @@ dice::dice()
  label.setText("Dice " + QString::number(diceNumber));
  ++diceNumber;
  layout.addWidget(&label);
- layout.addWidget(&result);
+ layout.addWidget(&resultLabel);
 }
 
-QString dice::generateRandomNumber()
+int dice::generateRandomNumber()
 {
- return QString::number(distrib(rd));
+ return distrib(rd);
 }
 
 void dice::setLabel(const bool)
 {
- result.setText(generateRandomNumber());
+ result = generateRandomNumber();
+ resultLabel.setText(QString::number(result));
+}
+
+int dice::getResult() const
+{
+ return result;
 }

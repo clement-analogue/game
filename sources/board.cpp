@@ -9,7 +9,10 @@ board::board()
   tile * t = new tile{&widget};
   tilesLayout.addWidget(t);
  }
+ // dices
  layout.addWidget(&d);
+ connect(&d, &dices::result, this, &board::result);
+ // this
  widget.show();
 }
 

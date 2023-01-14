@@ -13,12 +13,14 @@ class dice final : public QWidget
 {
  QVBoxLayout layout{this};
  QLabel label{""};
- QLabel result{""};
+ QLabel resultLabel{""};
  std::random_device rd{};
  std::uniform_int_distribution<> distrib{1, 6};
- QString generateRandomNumber();
+ int generateRandomNumber();
+ int result{0};
  static int diceNumber;
  public:
  explicit dice();
  void setLabel(const bool);
+ int getResult() const;
 };
