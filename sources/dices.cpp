@@ -10,6 +10,7 @@ dices::dices()
 
 void dices::allowLaunch()
 {
+ button.setEnabled(true);
  connect(&button, &QPushButton::clicked, &d0, &dice::setLabel);
  connect(&button, &QPushButton::clicked, &d1, &dice::setLabel);
  connect(&button, &QPushButton::clicked, this, &dices::gatherResults);
@@ -18,6 +19,7 @@ void dices::allowLaunch()
 
 void dices::disallowLaunch()
 {
+ button.setDisabled(true);
  disconnect(&button, 0, 0, 0);
 }
 
