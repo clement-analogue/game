@@ -21,9 +21,12 @@ class board final : public QObject
  QVBoxLayout layout{&widget};
  QHBoxLayout tilesLayout{};
  dices d{};
+ std::vector<tile*> tiles{};
  public:
  explicit board();
  void allowLaunchDices();
+ void setFlat(const int tile);
  signals:
  void result(const int result) const;
+ void tileClicked(const int tile) const;
 };
