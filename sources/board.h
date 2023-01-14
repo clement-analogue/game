@@ -11,7 +11,7 @@
 #include <QHBoxLayout>
 
 // std
-#include <vector>
+#include <unordered_map>
 
 class board final : public QObject
 {
@@ -21,7 +21,7 @@ class board final : public QObject
  QVBoxLayout layout{&widget};
  QHBoxLayout tilesLayout{};
  dices d{};
- std::vector<tile*> tiles{};
+ std::unordered_map<int, tile*> tiles{};
  public:
  explicit board();
  void allowLaunchDices();

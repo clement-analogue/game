@@ -8,8 +8,8 @@ board::board()
  {
   tile * t = new tile{&widget};
   tilesLayout.addWidget(t);
-  tiles.push_back(t);
-  connect(t, &tile::getId, this, &board::tileClicked);
+  tiles.insert(std::make_pair(t->getId(), t));
+  connect(t, &tile::emitId, this, &board::tileClicked);
  }
  // dices
  layout.addWidget(&d);
@@ -26,5 +26,5 @@ void board::allowLaunchDices()
 void board::setFlat(const int tile)
 {
  // FIXME catch expection
- tiles.at(tile-1)->setFlat(true);
+ tiles.at(tile)->setFlat(true);
 }

@@ -11,8 +11,9 @@ class tile final : public QPushButton
  public:
  template<class... T>
  explicit tile(T... args);
+ int getId() const;
  signals:
- void getId(const int id) const;
+ void emitId(const int id) const;
 };
 
 #include "tile.hpp"
