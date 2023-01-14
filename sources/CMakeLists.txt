@@ -6,7 +6,7 @@ add_executable(${PROJECT_NAME}
  mdt.h
  board.h board.cpp
  dices.h dices.cpp
- dice.h dice.cpp
+ dice.h dice.hpp dice.cpp
  tile.h tile.hpp tile.cpp
  ctrl.h
 )

@@ -7,6 +7,6 @@
 int main(int argc, char* argv[])
 {
  QApplication app{argc, argv};
- mdt m{};
+ const mdt m{};
  return app.exec();
 }

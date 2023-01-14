@@ -22,5 +22,7 @@ class dice final : public QWidget
  public:
  explicit dice();
  void setLabel(const bool);
- int getResult() const;
+ constexpr auto getResult() const;
 };
+
+#include "dice.hpp"

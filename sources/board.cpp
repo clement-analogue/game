@@ -9,7 +9,7 @@ board::board()
  layout.addLayout(&tilesLayout);
  for(auto i{0}; i < 9; ++i)
  {
-  tile * t = new tile{&widget};
+  const auto t{new tile{&widget}};
   tilesLayout.addWidget(t);
   tiles.insert(std::make_pair(t->getId(), t));
   connect(t, &tile::emitId, this, &board::tileClicked);

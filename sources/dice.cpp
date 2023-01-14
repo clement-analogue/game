@@ -20,8 +20,3 @@ void dice::setLabel(const bool)
  result = generateRandomNumber();
  resultLabel.setText(QString::number(result));
 }
-
-int dice::getResult() const
-{
- return result;
-}
