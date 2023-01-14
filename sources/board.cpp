@@ -1,5 +1,8 @@
 #include "board.h"
 
+// std
+#include <iostream>
+
 board::board()
 {
  // tiles
@@ -25,7 +28,14 @@ void board::allowLaunchDices()
 
 void board::setFlatAndDisable(const int tile)
 {
- // FIXME catch expection
- tiles.at(tile)->setFlat(true);
- tiles.at(tile)->setDisabled(true);
+ try
+ {
+  tiles.at(tile)->setFlat(true);
+  tiles.at(tile)->setDisabled(true);
+ }
+ catch(const std::out_of_range e)
+ {
+  std::cerr << e.what() << std::endl;
+  std::cerr << "Non-existing tile" << std::endl;
+ }
 }
