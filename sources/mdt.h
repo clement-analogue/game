@@ -23,7 +23,7 @@ class mdt final
    if(tile<=result)
    {
     result-=tile;
-    b.setFlat(tile);
+    b.setFlatAndDisable(tile);
    }
    if(result==0)
    {

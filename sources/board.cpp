@@ -4,7 +4,7 @@ board::board()
 {
  // tiles
  layout.addLayout(&tilesLayout);
- for(auto i{0}; i < 10; ++i)
+ for(auto i{0}; i < 9; ++i)
  {
   tile * t = new tile{&widget};
   tilesLayout.addWidget(t);
@@ -23,8 +23,9 @@ void board::allowLaunchDices()
  d.allowLaunch();
 }
 
-void board::setFlat(const int tile)
+void board::setFlatAndDisable(const int tile)
 {
  // FIXME catch expection
  tiles.at(tile)->setFlat(true);
+ tiles.at(tile)->setDisabled(true);
 }
