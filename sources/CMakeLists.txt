@@ -3,6 +3,7 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 set(CMAKE_AUTOMOC ON)
 add_executable(${PROJECT_NAME}
  main.cpp
+ mdt.h
  board.h board.cpp
  dices.h dices.cpp
  dice.h dice.cpp

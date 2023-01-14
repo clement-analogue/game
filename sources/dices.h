@@ -14,8 +14,8 @@ class dices final : public QWidget
  QVBoxLayout layout{this};
  QHBoxLayout dicesLayout{};
  QPushButton button{"Launch"};
- void allowLaunch();
  void disallowLaunch();
  public:
+ void allowLaunch();
  explicit dices();
 };

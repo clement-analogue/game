@@ -6,8 +6,6 @@ dices::dices()
  dicesLayout.addWidget(&d1);
  layout.addLayout(&dicesLayout);
  layout.addWidget(&button);
-
- allowLaunch();
 }
 
 void dices::allowLaunch()

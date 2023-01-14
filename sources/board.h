@@ -20,4 +20,5 @@ class board final
  dices d{};
  public:
  explicit board();
+ void allowLaunchDices();
 };

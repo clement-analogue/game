@@ -12,3 +12,8 @@ board::board()
  layout.addWidget(&d);
  widget.show();
 }
+
+void board::allowLaunchDices()
+{
+ d.allowLaunch();
+}
