@@ -26,7 +26,7 @@ void board::allowLaunchDices()
  d.allowLaunch();
 }
 
-void board::setFlatAndDisable(const int tile)
+void board::setFlatAndDisable(const int tile) const
 {
  try
  {
