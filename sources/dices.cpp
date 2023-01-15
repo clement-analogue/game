@@ -2,6 +2,7 @@
 
 dices::dices()
 {
+ reset();
  dicesLayout.addWidget(&d0);
  dicesLayout.addWidget(&d1);
  layout.addLayout(&dicesLayout);
@@ -26,4 +27,10 @@ void dices::disallowLaunch()
 void dices::gatherResults() const
 {
  emit result(d0.getResult() + d1.getResult());
+}
+
+void dices::reset()
+{
+ d0.reset();
+ d1.reset();
 }

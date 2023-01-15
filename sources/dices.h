@@ -21,6 +21,7 @@ class dices final : public QWidget
  public:
  void allowLaunch();
  explicit dices();
+ void reset();
  signals:
  void result(const int result) const;
 };
