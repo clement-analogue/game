@@ -41,6 +41,10 @@ void ctrl::processTile(const int tile)
   emit allowLaunchDices();
   return;
  }
+ if((*remainingTiles.cbegin())>result)
+ {
+  emit loose();
+ }
 }
 
 void ctrl::start() const

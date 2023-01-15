@@ -54,7 +54,7 @@ void board::win()
 
 void board::loose()
 {
- remaining.setText("YOU LOOSE!");
+ remaining.setText(remaining.text()+" -- YOU LOOSE!");
 }
 
 std::set<int> board::getTilesId() const
