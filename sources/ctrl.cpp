@@ -32,7 +32,7 @@ void ctrl::processTile(const int tile)
   }
   else
   {
-   emit loose();
+   emit lost();
   }
   return;
  }
@@ -43,7 +43,7 @@ void ctrl::processTile(const int tile)
  }
  if((*remainingTiles.cbegin())>result)
  {
-  emit loose();
+  emit lost();
  }
 }
 

@@ -52,9 +52,9 @@ void board::win()
  remaining.setText("YOU WIN!");
 }
 
-void board::loose()
+void board::lost()
 {
- remaining.setText(remaining.text()+" -- YOU LOOSE!");
+ remaining.setText(remaining.text()+" -- YOU LOST!");
 }
 
 std::set<int> board::getTilesId() const

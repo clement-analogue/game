@@ -22,5 +22,5 @@ class ctrl final : public QObject
  void setFlatAndDisableTile(const int tile) const;
  void displayRemaining(const int remaining) const;
  void win() const;
- void loose() const;
+ void lost() const;
 };
