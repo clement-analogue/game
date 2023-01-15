@@ -25,7 +25,7 @@ class board final : public QObject
  public:
  explicit board();
  void allowLaunchDices();
- void setFlatAndDisable(const int tile) const;
+ void setFlatAndDisableTile(const int tile) const;
  signals:
  void result(const int result) const;
  void tileClicked(const int tile) const;
