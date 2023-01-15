@@ -12,6 +12,7 @@ class ctrl final : public QObject
  Q_DISABLE_COPY(ctrl)
  int result{0};
  std::set<int> remainingTiles{};
+ void checkIfLose() const;
  public:
  explicit ctrl(const std::set<int> tilesId);
  void newResult(const int result);

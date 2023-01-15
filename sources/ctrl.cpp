@@ -14,6 +14,7 @@ void ctrl::newResult(const int inputResult)
  }
  result=inputResult;
  emit displayRemaining(result);
+ checkIfLose();
 }
 
 void ctrl::processTile(const int tile)
@@ -42,10 +43,7 @@ void ctrl::processTile(const int tile)
   emit allowLaunchDices();
   return;
  }
- if((*remainingTiles.cbegin())>result)
- {
-  emit lost();
- }
+ checkIfLose();
 }
 
 void ctrl::reset(const std::set<int> tilesId)
@@ -54,4 +52,12 @@ void ctrl::reset(const std::set<int> tilesId)
  remainingTiles = tilesId;
  emit allowLaunchDices();
  emit displayRemaining(result);
+}
+
+void ctrl::checkIfLose() const
+{
+ if((*remainingTiles.cbegin())>result)
+ {
+  emit lost();
+ }
 }
