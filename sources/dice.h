@@ -23,6 +23,7 @@ class dice final : public QWidget
  explicit dice();
  void setLabel(const bool);
  constexpr auto getResult() const;
+ void reset();
 };
 
 #include "dice.hpp"
