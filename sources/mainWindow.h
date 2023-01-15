@@ -6,7 +6,7 @@
 class mainWindow final : public QMainWindow
 {
  public:
- explicit mainWindow(QWidget & board);
+ explicit mainWindow(QWidget * const board);
  void win();
  void lost();
 };

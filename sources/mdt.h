@@ -7,7 +7,7 @@
 
 class mdt final
 {
- board b;
+ board * const b{};
  ctrl c;
  mainWindow window{b};
  public:

@@ -3,9 +3,9 @@
 // qt
 #include <QStatusBar>
 
-mainWindow::mainWindow(QWidget & board)
+mainWindow::mainWindow(QWidget * const board)
 {
- setCentralWidget(&board);
+ setCentralWidget(board);
  statusBar()->showMessage("");
  show();
 }
