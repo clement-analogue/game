@@ -13,6 +13,7 @@
 
 // std
 #include <unordered_map>
+#include <set>
 
 class board final : public QObject
 {
@@ -31,6 +32,7 @@ class board final : public QObject
  void displayRemaining(const int inputRemaining);
  void win();
  void loose();
+ std::set<int> getTilesId() const;
  signals:
  void result(const int result) const;
  void tileClicked(const int tile) const;

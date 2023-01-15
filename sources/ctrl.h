@@ -1,15 +1,19 @@
 #pragma once
 
+// qt
 #include <QObject>
+
+// std
+#include <set>
 
 class ctrl final : public QObject
 {
  Q_OBJECT
  Q_DISABLE_COPY(ctrl)
  int result{0};
- int numberOfTileLeft{};
+ std::set<int> remainingTiles{};
  public:
- explicit ctrl(const int numberOfTile);
+ explicit ctrl(const std::set<int> tilesId);
  void newResult(const int result);
  void processTile(const int tile);
  void start() const;

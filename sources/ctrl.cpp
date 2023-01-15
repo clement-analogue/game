@@ -1,8 +1,9 @@
 #include "ctrl.h"
 
-ctrl::ctrl(const int numberOfTile)
-: numberOfTileLeft{numberOfTile}
-{}
+ctrl::ctrl(const std::set<int> tilesId)
+: remainingTiles{tilesId}
+{
+}
 
 void ctrl::newResult(const int inputResult)
 {
@@ -19,11 +20,11 @@ void ctrl::processTile(const int tile)
  if(tile<=result)
  {
   result-=tile;
-  --numberOfTileLeft;
+  remainingTiles.erase(tile);
   emit setFlatAndDisableTile(tile);
   emit displayRemaining(result);
  }
- if(numberOfTileLeft==0)
+ if(remainingTiles.size()==0)
  {
   if(result==0)
   {
@@ -38,6 +39,7 @@ void ctrl::processTile(const int tile)
  if(result==0)
  {
   emit allowLaunchDices();
+  return;
  }
 }
 

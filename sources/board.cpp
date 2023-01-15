@@ -56,3 +56,13 @@ void board::loose()
 {
  remaining.setText("YOU LOOSE!");
 }
+
+std::set<int> board::getTilesId() const
+{
+ std::set<int> tilesId{};
+ for(const auto tile : tiles)
+ {
+  tilesId.insert(tile.first);
+ }
+ return tilesId;
+}

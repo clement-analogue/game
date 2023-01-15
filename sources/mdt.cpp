@@ -1,8 +1,8 @@
 #include "mdt.h"
 
 mdt::mdt(const int numberOfTiles)
-: c{numberOfTiles}
-, b{numberOfTiles}
+: b{numberOfTiles}
+, c{b.getTilesId()}
 {
  QObject::connect(&c, &ctrl::allowLaunchDices, &b, &board::allowLaunchDices);
  QObject::connect(&b, &board::result, &c, &ctrl::newResult);
