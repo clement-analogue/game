@@ -29,6 +29,7 @@ class board final : public QWidget
  void setFlatAndDisableTile(const int tile) const;
  void displayRemaining(const int inputRemaining);
  std::set<int> getTilesId() const;
+ void reset();
  signals:
  void result(const int result) const;
  void tileClicked(const int tile) const;

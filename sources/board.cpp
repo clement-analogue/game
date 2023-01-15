@@ -19,6 +19,8 @@ board::board(const int numberOfTiles)
  connect(&d, &dices::result, this, &board::result);
  // remaining
  layout.addWidget(&remaining);
+
+ reset();
 }
 
 void board::allowLaunchDices()
@@ -53,4 +55,14 @@ std::set<int> board::getTilesId() const
   tilesId.insert(tile.first);
  }
  return tilesId;
+}
+
+void board::reset()
+{
+ for(const auto tile : tiles)
+ {
+  tile.second->setFlat(false);
+  tile.second->setEnabled(true);
+ }
+ d.reset();
 }
