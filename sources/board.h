@@ -25,10 +25,12 @@ class board final : public QObject
  QLabel remaining{};
  std::unordered_map<int, tile*> tiles{};
  public:
- explicit board();
+ explicit board(const int numerOfTiles);
  void allowLaunchDices();
  void setFlatAndDisableTile(const int tile) const;
  void displayRemaining(const int inputRemaining);
+ void win();
+ void loose();
  signals:
  void result(const int result) const;
  void tileClicked(const int tile) const;

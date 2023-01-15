@@ -6,8 +6,8 @@
 
 class mdt final
 {
- ctrl c{};
- board b{};
+ ctrl c;
+ board b;
  public:
- explicit mdt();
+ explicit mdt(const int numberOfTiles);
 };

@@ -3,7 +3,7 @@
 // std
 #include <iostream>
 
-board::board()
+board::board(const int numberOfTiles)
 {
  // tiles
  layout.addLayout(&tilesLayout);
@@ -45,4 +45,14 @@ void board::setFlatAndDisableTile(const int tile) const
 void board::displayRemaining(const int inputRemaining)
 {
  remaining.setText("Remaining: " + QString::number(inputRemaining));
+}
+
+void board::win()
+{
+ remaining.setText("YOU WIN!");
+}
+
+void board::loose()
+{
+ remaining.setText("YOU LOOSE!");
 }
