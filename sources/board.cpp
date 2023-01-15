@@ -17,6 +17,8 @@ board::board()
  // dices
  layout.addWidget(&d);
  connect(&d, &dices::result, this, &board::result);
+ // remaining
+ layout.addWidget(&remaining);
  // this
  widget.show();
 }
@@ -38,4 +40,9 @@ void board::setFlatAndDisableTile(const int tile) const
   std::cerr << e.what() << std::endl;
   std::cerr << "Non-existing tile" << std::endl;
  }
+}
+
+void board::displayRemaining(const int inputRemaining)
+{
+ remaining.setText("Remaining: " + QString::number(inputRemaining));
 }

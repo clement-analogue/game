@@ -7,18 +7,16 @@ void ctrl::newResult(const int inputResult)
   throw "result must be zero";
  }
  result=inputResult;
+ emit displayRemaining(result);
 }
-
-// FIXME
-#include <iostream>
 
 void ctrl::processTile(const int tile)
 {
- std::cout<<result<<" "<<tile<<std::endl;
  if(tile<=result)
  {
   result-=tile;
   emit setFlatAndDisableTile(tile);
+  emit displayRemaining(result);
  }
  if(result==0)
  {
@@ -28,5 +26,6 @@ void ctrl::processTile(const int tile)
 
 void ctrl::start() const
 {
+ emit displayRemaining(result);
  emit allowLaunchDices();
 }

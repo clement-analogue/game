@@ -15,4 +15,5 @@ class ctrl final : public QObject
  signals:
  void allowLaunchDices() const;
  void setFlatAndDisableTile(const int tile) const;
+ void displayRemaining(const int remaining) const;
 };

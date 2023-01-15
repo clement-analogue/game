@@ -7,6 +7,7 @@
 // qt
 #include <QObject>
 #include <QWidget>
+#include <QLabel>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 
@@ -21,11 +22,13 @@ class board final : public QObject
  QVBoxLayout layout{&widget};
  QHBoxLayout tilesLayout{};
  dices d{};
+ QLabel remaining{};
  std::unordered_map<int, tile*> tiles{};
  public:
  explicit board();
  void allowLaunchDices();
  void setFlatAndDisableTile(const int tile) const;
+ void displayRemaining(const int inputRemaining);
  signals:
  void result(const int result) const;
  void tileClicked(const int tile) const;

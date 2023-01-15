@@ -6,6 +6,7 @@ mdt::mdt()
  QObject::connect(&b, &board::result, &c, &ctrl::newResult);
  QObject::connect(&b, &board::tileClicked, &c, &ctrl::processTile);
  QObject::connect(&c, &ctrl::setFlatAndDisableTile, &b, &::board::setFlatAndDisableTile);
+ QObject::connect(&c, &ctrl::displayRemaining, &b, &board::displayRemaining);
 
  c.start();
 }
