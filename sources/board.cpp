@@ -9,7 +9,7 @@ board::board(const int numberOfTiles)
  layout.addLayout(&tilesLayout);
  for(auto i{0}; i < 9; ++i)
  {
-  const auto t{new tile{&widget}};
+  const auto t{new tile{this}};
   tilesLayout.addWidget(t);
   tiles.insert(std::make_pair(t->getId(), t));
   connect(t, &tile::emitId, this, &board::tileClicked);
@@ -19,8 +19,6 @@ board::board(const int numberOfTiles)
  connect(&d, &dices::result, this, &board::result);
  // remaining
  layout.addWidget(&remaining);
- // this
- widget.show();
 }
 
 void board::allowLaunchDices()
@@ -45,16 +43,6 @@ void board::setFlatAndDisableTile(const int tile) const
 void board::displayRemaining(const int inputRemaining)
 {
  remaining.setText("Remaining: " + QString::number(inputRemaining));
-}
-
-void board::win()
-{
- remaining.setText("YOU WIN!");
-}
-
-void board::lost()
-{
- remaining.setText(remaining.text()+" -- YOU LOST!");
 }
 
 std::set<int> board::getTilesId() const

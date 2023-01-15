@@ -5,7 +5,6 @@
 #include "tile.h"
 
 // qt
-#include <QObject>
 #include <QWidget>
 #include <QLabel>
 #include <QVBoxLayout>
@@ -15,12 +14,11 @@
 #include <unordered_map>
 #include <set>
 
-class board final : public QObject
+class board final : public QWidget
 {
  Q_OBJECT
  Q_DISABLE_COPY(board)
- QWidget widget{};
- QVBoxLayout layout{&widget};
+ QVBoxLayout layout{this};
  QHBoxLayout tilesLayout{};
  dices d{};
  QLabel remaining{};
@@ -30,8 +28,6 @@ class board final : public QObject
  void allowLaunchDices();
  void setFlatAndDisableTile(const int tile) const;
  void displayRemaining(const int inputRemaining);
- void win();
- void lost();
  std::set<int> getTilesId() const;
  signals:
  void result(const int result) const;

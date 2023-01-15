@@ -10,5 +10,6 @@ add_executable(${PROJECT_NAME}
  dice.h dice.hpp dice.cpp
  tile.h tile.hpp tile.cpp
  ctrl.h ctrl.cpp
+ mainWindow.h mainWindow.cpp
 )
 target_link_libraries(${PROJECT_NAME} PRIVATE Qt::Widgets)
