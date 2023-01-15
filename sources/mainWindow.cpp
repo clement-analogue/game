@@ -5,8 +5,11 @@
 
 mainWindow::mainWindow(QWidget * const board)
 {
+ reset();
+ connect(&resetButton, &QPushButton::pressed, this, &mainWindow::askReset);
  setCentralWidget(board);
- statusBar()->showMessage("");
+ dock.setWidget(&resetButton);
+ addDockWidget(Qt::DockWidgetArea::TopDockWidgetArea, &dock);
  show();
 }
 
@@ -18,4 +21,14 @@ void mainWindow::win()
 void mainWindow::lost()
 {
  statusBar()->showMessage("YOU LOST!");
+}
+
+void mainWindow::resetStatus() const
+{
+ statusBar()->showMessage("");
+}
+
+void mainWindow::reset() const
+{
+ resetStatus();
 }

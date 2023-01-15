@@ -3,6 +3,7 @@
 ctrl::ctrl(const std::set<int> tilesId)
 : remainingTiles{tilesId}
 {
+ reset(tilesId);
 }
 
 void ctrl::newResult(const int inputResult)
@@ -47,8 +48,10 @@ void ctrl::processTile(const int tile)
  }
 }
 
-void ctrl::start() const
+void ctrl::reset(const std::set<int> tilesId)
 {
- emit displayRemaining(result);
+ result = 0;
+ remainingTiles = tilesId;
  emit allowLaunchDices();
+ emit displayRemaining(result);
 }

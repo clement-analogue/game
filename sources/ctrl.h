@@ -16,7 +16,7 @@ class ctrl final : public QObject
  explicit ctrl(const std::set<int> tilesId);
  void newResult(const int result);
  void processTile(const int tile);
- void start() const;
+ void reset(const std::set<int> tilesId);
  signals:
  void allowLaunchDices() const;
  void setFlatAndDisableTile(const int tile) const;
